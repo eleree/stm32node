@@ -38,6 +38,8 @@
 // This version uses almost no stack, and does not suffer from buffer 
 // overflows. The downside is that it does not implement a wide range
 // of formatting characters.
+#pragma diag_suppress 1293
+#pragma diag_suppress 177
 
 #include <c_stdlib.h>
 #include <c_types.h>

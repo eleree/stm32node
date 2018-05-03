@@ -17,6 +17,8 @@
 #else
 #endif
 
+extern void dbg_printf(const char *fmt, ...) __attribute__ ((format (printf, 1, 2)));
+
 /* This file uses only the official API of Lua.
 ** Any function declared here could be written as an application function.
 */

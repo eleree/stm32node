@@ -14,4 +14,3 @@ time_t time(time_t * tz)
 {
 	return 0;
 }
-

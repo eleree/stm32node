@@ -538,13 +538,13 @@ void StartDefaultTask(void const * argument)
   /* USER CODE BEGIN 5 */
 	printf("Starting eLua Demo\r\n");
 	int error  = 0;
-	const char * buff = "io.write(\"The table the script received has:\\n\");\r\n\
+	const char * buff = "print(\"The table the script received has:\\n\");\r\n\
 	x = 0;\r\n\
 	for i = 1, #foo do\r\n\
 	print(i, foo[i])\r\n\
 	x = x + foo[i]\r\n\
 	end\r\n\
-	io.write(\"Returning data back to C\\n\");\r\n\
+	print(\"Returning data back to C\\n\");\r\n\
 	return x";
 
 	lua_State *L = lua_open();   /* opens Lua */

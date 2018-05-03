@@ -1,7 +1,7 @@
 #ifndef __c_stdarg_h
 #define __c_stdarg_h
 
-#if defined(__GNUC__)
+#if defined(__CC_ARM)
 
 #include <stdarg.h>
 

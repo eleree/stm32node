@@ -8,8 +8,6 @@
 #define _C_STDLIB_H_
 
 #include "c_stddef.h"
-#include "mem.h"
-
 #include <stdlib.h>
 
 #define EXIT_FAILURE 1
@@ -26,11 +24,25 @@
 #define RAND_MAX __RAND_MAX
 #endif
 
+void *pvPortMalloc (size_t sz);
+void vPortFree (void *p);
+void *pvPortZalloc (size_t sz);
+void *pvPortRealloc (void *p);
+
+
 #ifndef mem_realloc
 #define mem_realloc pvPortRealloc
 #endif
 #ifndef os_realloc
 #define os_realloc(p, s) mem_realloc((p), (s))
+#endif
+
+#ifndef os_free
+#define os_free(p) vPortFree((p))
+#endif
+
+#ifndef os_malloc
+#define os_malloc(p) pvPortMalloc((p))
 #endif
 
 #define c_free os_free
