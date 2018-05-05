@@ -373,7 +373,7 @@
               <MiscControls></MiscControls>
               <Define>MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;,USE_HAL_DRIVER,STM32F407xx,LUA_CROSS_COMPILER,BUILD_FATFS</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Middlewares/Third_Party/LwIP/src/include;../Middlewares/Third_Party/LwIP/system;../Middlewares/Third_Party/mbedTLS/include;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Middlewares/Third_Party/LwIP/src/include/netif/ppp;../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Middlewares/Third_Party/FatFs/src;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/LwIP/src/include/lwip;../Middlewares/Third_Party/LwIP/src/include/lwip/apps;../Middlewares/Third_Party/LwIP/src/include/lwip/priv;../Middlewares/Third_Party/LwIP/src/include/lwip/prot;../Middlewares/Third_Party/LwIP/src/include/netif;../Middlewares/Third_Party/LwIP/src/include/posix;../Middlewares/Third_Party/LwIP/src/include/posix/sys;../Middlewares/Third_Party/LwIP/system/arch;../Middlewares/Third_Party/mbedTLS/include/mbedtls;../Drivers/CMSIS/Include;..\..\..\app\include;..\..\..\app\libc;..\..\..\app\lua;..\..\..\app\platform</IncludePath>
+              <IncludePath>../Inc;  ../Middlewares/Third_Party/LwIP/src/include;  ../Middlewares/Third_Party/LwIP/system;  ../Middlewares/Third_Party/mbedTLS/include;  ../Drivers/STM32F4xx_HAL_Driver/Inc;  ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;  ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;  ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;  ../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc;  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;  ../Middlewares/Third_Party/FatFs/src;  ../Middlewares/Third_Party/FreeRTOS/Source/include;  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;  ../Middlewares/Third_Party/LwIP/src/include/lwip;  ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;  ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;  ../Middlewares/Third_Party/LwIP/src/include/netif;  ../Middlewares/Third_Party/LwIP/src/include/posix;  ../Middlewares/Third_Party/LwIP/src/include/posix/sys;  ../Middlewares/Third_Party/LwIP/system/arch;  ../Middlewares/Third_Party/mbedTLS/include/mbedtls;  ../Drivers/CMSIS/Include;  ..\..\..\app\include;  ..\..\..\app\libc;  ..\..\..\app\lua;  ..\..\..\app\platform</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1772,6 +1772,16 @@
               <FileName>osapi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\app\hal\osapi.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Test</GroupName>
+          <Files>
+            <File>
+              <FileName>fatfs_test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\test\fatfs_test.c</FilePath>
             </File>
           </Files>
         </Group>

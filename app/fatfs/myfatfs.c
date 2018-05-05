@@ -14,12 +14,6 @@
 #define TRUE  1
 #define FALSE 0
 
-PARTITION VolToPart[] = {
-        {0, 1},    /* "0:" ==> Physical drive 0, 1st partition */
-        {0, 2},    /* "1:" ==> Physical drive 0, 2nd partition */
-        {1, 0}     /* "2:" ==> Physical drive 1, auto detection */
-    };
-
 static FRESULT last_result = FR_OK;
 
 static const char* const volstr[_VOLUMES] = {"SD1","SPI1"};

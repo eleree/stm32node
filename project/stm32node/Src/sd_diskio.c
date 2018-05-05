@@ -371,7 +371,8 @@ DRESULT SD_ioctl(BYTE lun, BYTE cmd, void *buff)
    ===============================================================================
   */
 //void BSP_SD_WriteCpltCallback(uint32_t SdCard)
-void BSP_SD_WriteCpltCallback(void)
+//void BSP_SD_WriteCpltCallback(void)
+void HAL_SD_TxCpltCallback(SD_HandleTypeDef *hsd)
 {
   /*
    * No need to add an "osKernelRunning()" check here, as the SD_initialize()
@@ -394,7 +395,8 @@ void BSP_SD_WriteCpltCallback(void)
    ===============================================================================
   */
 //void BSP_SD_ReadCpltCallback(uint32_t SdCard)
-void BSP_SD_ReadCpltCallback(void)
+//void BSP_SD_ReadCpltCallback(void)
+void HAL_SD_RxCpltCallback(SD_HandleTypeDef *hsd)
 {
   /*
    * No need to add an "osKernelRunning()" check here, as the SD_initialize()
@@ -402,6 +404,7 @@ void BSP_SD_ReadCpltCallback(void)
    */
   osMessagePut(SDQueueID, READ_CPLT_MSG, osWaitForever);
 }
+
 
 /* USER CODE BEGIN lastSection */ 
 /* can be used to modify / undefine previous code or add new code */
