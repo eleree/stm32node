@@ -87,7 +87,7 @@ vfs_vol *vfs_mount( const char *name, int num )
 #endif
 
 #ifdef BUILD_FATFS
-  if (fs_fns = myfatfs_realm( normname, &outname, FALSE )) {
+  if (fs_fns = myfatfs_realm( normname, &outname, TRUE )) {
     vfs_vol *r = fs_fns->mount( outname, num );
     c_free( outname );
     return r;

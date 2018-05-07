@@ -57,7 +57,7 @@ FIL SDFile;       /* File object for SD */
 /* Volume - Partition resolution table should be user defined in case of Multiple partition */
 /* When multi-partition feature is enabled (1), each logical drive number is bound to arbitrary physical drive and partition
 listed in the VolToPart[] */
-PARTITION VolToPart[];
+PARTITION VolToPart[1];
 /* USER CODE END VolToPart */  
 
 /* USER CODE BEGIN Variables */

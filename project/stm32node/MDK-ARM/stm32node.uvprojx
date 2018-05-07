@@ -1786,6 +1786,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>App/User</GroupName>
+          <Files>
+            <File>
+              <FileName>user_main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\app\user\user_main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
