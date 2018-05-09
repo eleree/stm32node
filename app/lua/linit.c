@@ -32,7 +32,20 @@ static const luaL_Reg lua_libs[] = {
 
 const luaR_table lua_rotable[] = {{NULL, NULL}};
 #else 
-extern const luaL_Reg lua_libs[];
+static const luaL_Reg lua_libs[] = {
+  {"", luaopen_base},
+  {LUA_LOADLIBNAME, luaopen_package},
+  {LUA_TABLIBNAME, luaopen_table},
+  {LUA_IOLIBNAME, luaopen_io},
+  {LUA_OSLIBNAME, luaopen_os},
+  {LUA_STRLIBNAME, luaopen_string},
+  {LUA_MATHLIBNAME, luaopen_math},
+  {LUA_DBLIBNAME, luaopen_debug},
+  {NULL, NULL}
+};
+
+const luaR_table lua_rotable[] = {{NULL, NULL}};
+
 #endif
 
 

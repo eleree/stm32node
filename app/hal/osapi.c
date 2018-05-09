@@ -1,7 +1,9 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "osapi.h"
 #include <FreeRTOS.h>
+
 const char * os_strchr(const char *str, int c)
 {
 	return strchr(str,c);
@@ -48,4 +50,27 @@ size_t os_strlen(const char * s)
 	return strlen(s);
 }
 
+void c_exit(int code)
+{
+	while(1);
+}
+void *os_memcpy(void * s1, const void *  s2, size_t n) 
+{
+	return memcpy(s1,s2,n);
+}
+
+char *os_strcat(char * s1, const char *  s2)
+{
+	return strcat(s1, s2);
+}
+
+int os_memcmp(const void * s1,const void * s2, size_t n)
+{
+	return memcmp(s1,s2,n);
+}
+
+void output_redirect(const char *str)
+{
+	printf(str);
+}
 

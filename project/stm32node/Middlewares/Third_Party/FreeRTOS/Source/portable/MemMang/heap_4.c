@@ -76,6 +76,7 @@
  * memory management pages of http://www.FreeRTOS.org for more information.
  */
 #include <stdlib.h>
+#include <string.h>
 
 /* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining
 all the API functions to use the MPU wrappers.  That should only be done when
@@ -476,3 +477,31 @@ uint8_t *puc;
 	}
 }
 
+void *pvPortRealloc(void *pv, size_t xWantedSize) {
+	void *pvReturn = NULL;
+	BlockLink_t *pxLink;
+	unsigned char *puc = (unsigned char *) pv;
+	size_t len;
+	if(!pv)
+		return pvPortMalloc (xWantedSize);
+
+	if ((pv != NULL) && (xWantedSize > 0)) {
+			/* The memory will have an xBlockLink structure immediately
+			 before it. */
+			puc -= xHeapStructSize;
+			/* This casting is to keep the compiler from issuing warnings. */
+			pxLink = (void *) puc;
+			pvReturn = pvPortMalloc(xWantedSize);
+			if (pvReturn) {
+					 /* check if realloc uses smaller or larger area now */
+					 len = pxLink->xBlockSize - xHeapStructSize;
+					 if (len > xWantedSize)
+								len = xWantedSize;
+					 memcpy(pvReturn, pv, len);
+					 vPortFree(pv);
+			} else {
+					 /* keep old object unchanged */
+			}
+	}
+	return (pvReturn);
+}

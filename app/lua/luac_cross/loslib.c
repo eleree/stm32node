@@ -11,7 +11,8 @@
 #include C_HEADER_LOCALE
 #include C_HEADER_STDLIB
 #include C_HEADER_STRING
-#include C_HEADER_TIME
+#include <stdio.h>
+#include <time.h>
 
 #define loslib_c
 #define LUA_LIB

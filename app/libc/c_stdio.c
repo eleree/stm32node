@@ -272,6 +272,7 @@ strtoupper(char *p)
 //#include <string.h>
 //#include <pmon.h>
 #include "c_string.h"
+#include <stdint.h>
 typedef unsigned int u_int32_t;
 typedef unsigned int u_int;
 typedef unsigned long u_long;

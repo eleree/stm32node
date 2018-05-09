@@ -1,7 +1,7 @@
 #ifndef __c_fcntl_h
 #define __c_fcntl_h
 
-#include <fcntl.h>
+//#include <fcntl.h>
 
 #endif
 

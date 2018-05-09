@@ -32,9 +32,11 @@ extern int c_stderr;
 #define	EOF	(-1)
 
 #ifdef __BUFSIZ__
-#define   BUFSIZ         __BUFSIZ__
+# define   BUFSIZ         __BUFSIZ__
 #else
-#define   BUFSIZ         1024
+# ifndef BUFSIZ
+#  define   BUFSIZ         1024
+# endif
 #endif
 
 #ifndef SEEK_SET

@@ -61,6 +61,7 @@ double	c_strtod(const char *__n, char **__end_PTR);
 
 #else
 
+#include <stdio.h>
 #define C_HEADER_ASSERT "c_assert.h"
 #define C_HEADER_CTYPE "c_ctype.h"
 #define C_HEADER_ERRNO "c_errno.h"

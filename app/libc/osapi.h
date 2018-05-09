@@ -13,4 +13,12 @@ char * os_strcpy(char * s1, const char *  s2);
 char * c_strdup(const char * s1);
 size_t os_strlen(const char * s);
 
+void c_exit(int code);
+void *os_memcpy(void * s1, const void *  s2, size_t n);
+int os_memcmp(const void * s1,const void * s2, size_t n);
+char *os_strcat(char * s1, const char *  s2);
+
+
+#define c_sprintf sprintf
+
 #endif

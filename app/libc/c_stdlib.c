@@ -16,6 +16,14 @@
 #include "c_types.h"
 #include "c_string.h"
 
+#ifndef TRUE
+#define TRUE 1
+#endif
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
 // const char *lua_init_value = "print(\"Hello world\")";
 const char *lua_init_value = "@init.lua";
 
@@ -64,7 +72,7 @@ const char *c_getenv(const char *__string)
 
 // int  c_atoi(const char *__nptr){
 // }
-#include <_ansi.h>
+//#include <_ansi.h>
 //#include <reent.h>
 //#include "mprec.h"
 #endif

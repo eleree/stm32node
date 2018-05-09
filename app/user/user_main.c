@@ -1,5 +1,15 @@
+#include "lua.h"
 #include "c_stdio.h"
 #include "vfs.h"
+
+#if 0
+static void start_lua(void) {
+  char* lua_argv[] = { (char *)"lua", (char *)"-i", NULL };
+  printf("Task task_lua started.\n");
+  lua_main( 2, lua_argv );
+}
+#endif
+
 
 void stm32node_init(void)
 {

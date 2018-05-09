@@ -11,8 +11,8 @@
 #include "c_string.h"
 #include "user_interface.h"
 #include "user_version.h"
-#include "driver/readline.h"
-#include "driver/uart.h"
+//#include "driver/readline.h"
+//#include "driver/uart.h"
 
 #define lua_c
 
@@ -22,7 +22,9 @@
 #include "lualib.h"
 #include "legc.h"
 
-#include "os_type.h"
+//#include "os_type.h"
+#include <stdbool.h>
+#include "FreeRTOS.h"
 
 lua_State *globalL = NULL;
 
@@ -459,7 +461,7 @@ int lua_main (int argc, char **argv) {
 
   dojob(&gLoad);
 
-  NODE_DBG("Heap size::%d.\n",system_get_free_heap_size());
+  printf("Heap size::%d.\n",xPortGetFreeHeapSize());
   legc_set_mode( L, EGC_ALWAYS, 4096 );
   // legc_set_mode( L, EGC_ON_MEM_LIMIT, 4096 );
   // lua_close(L);

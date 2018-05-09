@@ -21,7 +21,9 @@
 #include "lstring.h"
 #include "lvm.h"
 #ifndef LUA_CROSS_COMPILER
-#include "flash_api.h"
+//#include "flash_api.h"
+#include <limits.h>
+#include <osapi.h>
 #else
 #include <limits.h>
 #endif
@@ -53,7 +55,7 @@ int luaO_fb2int (int x) {
 
 
 int luaO_log2 (unsigned int x) {
-  static const lu_byte log_2[256] ICACHE_STORE_ATTR ICACHE_RODATA_ATTR = {
+  static const lu_byte log_2[256] = {
     0,1,2,2,3,3,3,3,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
     6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
     7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
@@ -68,7 +70,8 @@ int luaO_log2 (unsigned int x) {
 #ifdef LUA_CROSS_COMPILER
   return l + log_2[x];
 #else
-  return l + byte_of_aligned_array(log_2,x);
+  //return l + byte_of_aligned_array(log_2,x);
+	return l + log_2[x];
 #endif
 }
 

@@ -16,6 +16,7 @@
 #include <stddef.h>
 #include <ctype.h>
 #else
+#include <stdbool.h>
 #include "c_stdarg.h"
 #include "c_stddef.h"
 #include "c_types.h"

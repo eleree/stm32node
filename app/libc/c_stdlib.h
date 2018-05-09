@@ -27,14 +27,14 @@
 void *pvPortMalloc (size_t sz);
 void vPortFree (void *p);
 void *pvPortZalloc (size_t sz);
-void *pvPortRealloc (void *p);
+void *pvPortRealloc (void *p, size_t sz);
 
 
 #ifndef mem_realloc
 #define mem_realloc pvPortRealloc
 #endif
 #ifndef os_realloc
-#define os_realloc(p, s) mem_realloc((p), (s))
+#define os_realloc(p, s) pvPortRealloc((p), (s))
 #endif
 
 #ifndef os_free
